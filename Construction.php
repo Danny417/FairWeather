@@ -3,6 +3,14 @@
 <head>
 	<title>YourStudio</title>
   	<style>
+	@font-face {
+		font-family: BIFUR;
+		src: url('fonts/BIFUR.ttf');
+	}
+	@font-face {
+		font-family: whiterabbit;
+		src: url('fonts/whiterabbit.ttf');
+	}
 	#footer {
  		position: absolute;
  		z-index: 10;
@@ -31,6 +39,14 @@
 		position: relative;
 		min-height: 64px;
 		line-height: 64px;
+		text-align: center;
+	}
+	h1 {
+		font-family: whiterabbit;
+		color: #A09494;
+	}
+	h2 {
+		font-family: BIFUR;		
 	}
 	body {
 		background-repeat:no-repeat;
@@ -39,12 +55,13 @@
 	}
 	.swiper-container {
 		padding:30px 0;
-		width: 1200px;
+		max-width: 1200px;
 	}
 	.swiper-slide {
 		width:auto;		
 		max-height:450px;	
 		min-height: 150px;
+		min-width: 100px;
 		background-size:cover;
 		background-repeat:no-repeat;
 		background-position:center;
@@ -59,6 +76,25 @@
 			background: -moz-linear-gradient(45deg, rgba(240,248,243,0.5), rgba(207,237,217,1), rgba(240,248,243,0.5)); /*Fx 3.6-15*/
 			background: linear-gradient(45deg, rgba(240,248,243,0.5), rgba(207,237,217,1), rgba(240,248,243,0.5)); /*Standard*/
 		}
+	}
+	@media (max-width: 300px) {
+		h1 { font-size: 140%; }
+		h2 { font-size: 40%; }
+	}
+
+	@media (min-width: 500px) {
+		h1 { font-size: 160%; }
+		h2 { font-size: 80%; }
+	}
+
+	@media (min-width: 700px) {
+		h1 { font-size: 240%; }
+		h2 { font-size: 120%; }
+	}
+
+	@media (min-width: 1200px) {
+		h1 { font-size: 400%; }
+		h2 { font-size: 200%; }
 	}
 	</style>	
 	<link rel="stylesheet" href="css/animate.min.css">
@@ -77,8 +113,10 @@
 			</div>
 		</div>
 		<ul id="menu" listanimation enter="bounceInLeft" leave="bounceOutRight" elems="li" visibility="hidden">
-			<h1>New Project</h1>
-			<h2>Comming Soon...</h2>
+			<div id="title">
+				<h1>New Project</h1>
+				<h2>Comming Soon...</h2>
+			</div>
 			<li duration="2s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/facebookx64.png"/></a></li>
 			<li duration="3s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/twitterx64.png"/></a></li>
 			<li duration="4s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/rssx64.png"/></a></li>
@@ -109,7 +147,7 @@
 			$("#page").css('height', window.innerHeight - 50);
 			$("#menu").css('height', '10%');
 			$("#menu").css('line-height', $("#menu").height() + 'px');
-			$('#menu img').css('margin-top', $("#menu").height()/2-32);			
+			$('#menu img').css('margin-top', $("#menu").height()/2-32);
 		};
 		$(window).resize( function() {
 			checkBrowserSize();
