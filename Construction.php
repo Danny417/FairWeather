@@ -20,25 +20,31 @@
 	#menu li {
 		text-align: center;		
 		float: right;
+		display: inline;
+	}
+	#menu * {
+		margin: 0 15px;
 	}
 	ul {
 		list-style-type:none;
 		margin:0;
-		padding:0 10em 0 0;
+		padding:0;
 		overflow: hidden;
 	}
-	#menu * {
-		display: inline;
-		margin: 0 30px;
-	}
-	#menu {		
+	#title {
 		background: -webkit-linear-gradient(45deg, rgba(216,234,245,0.2), rgba(164,210,237,0.5), rgba(216,234,245,0.2)); /*Safari*/
 		background: -o-linear-gradient(45deg, rgba(216,234,245,0.2), rgba(164,210,237,0.5), rgba(216,234,245,0.2))); /*Opera 11-12*/
 		background: -moz-linear-gradient(45deg, rgba(216,234,245,0.2), rgba(164,210,237,0.5), rgba(216,234,245,0.2)); /*Fx 3.6-15*/
 		background: linear-gradient(45deg, rgba(216,234,245,0.2), rgba(255,255,255,0.5), rgba(216,234,245,0.2)); /*Standard*/
-		position: relative;
-		min-height: 64px;
 		line-height: 64px;
+		min-height: 64px;
+	}
+	#title * {
+		display: inline;
+	}
+	#menu {		
+		position: relative;
+		min-height: 128px;
 		text-align: center;
 	}
 	h1 {
@@ -46,7 +52,7 @@
 		color: #A09494;
 	}
 	h2 {
-		font-family: BIFUR;		
+		font-family: BIFUR;	
 	}
 	body {
 		background-repeat:no-repeat;
@@ -145,9 +151,9 @@
 		function checkBrowserSize() {
 			$(".swiper-slide, .swiper-wrapper").css('height', window.innerHeight*0.5);
 			$("#page").css('height', window.innerHeight - 50);
-			$("#menu").css('height', '10%');
-			$("#menu").css('line-height', $("#menu").height() + 'px');
-			$('#menu img').css('margin-top', $("#menu").height()/2-32);
+			$("#menu").css('height', '20%');
+			$("#title").css('height', '10%');
+			$('#menu img').css('margin-top', $("#menu").height()/4-32);
 		};
 		$(window).resize( function() {
 			checkBrowserSize();
