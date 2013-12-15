@@ -7,10 +7,6 @@
 		font-family: BIFUR;
 		src: url('fonts/BIFUR.ttf');
 	}
-	@font-face {
-		font-family: whiterabbit;
-		src: url('fonts/whiterabbit.ttf');
-	}
 	#footer {
  		position: absolute;
  		z-index: 10;
@@ -41,6 +37,10 @@
 	}
 	#title * {
 		display: inline;
+		font-family: BIFUR;
+	}
+	#title h1 {
+		vertical-align: middle;
 	}
 	#menu {		
 		position: relative;
@@ -48,11 +48,7 @@
 		text-align: center;
 	}
 	h1 {
-		font-family: whiterabbit;
 		color: #A09494;
-	}
-	h2 {
-		font-family: BIFUR;	
 	}
 	body {
 		background-repeat:no-repeat;
@@ -84,22 +80,22 @@
 		}
 	}
 	@media (max-width: 300px) {
-		h1 { font-size: 140%; }
+		h1 { font-size: 100%; }
 		h2 { font-size: 40%; }
 	}
 
 	@media (min-width: 500px) {
-		h1 { font-size: 160%; }
+		h1 { font-size: 120%; }
 		h2 { font-size: 80%; }
 	}
 
 	@media (min-width: 700px) {
-		h1 { font-size: 240%; }
+		h1 { font-size: 180%; }
 		h2 { font-size: 120%; }
 	}
 
 	@media (min-width: 1200px) {
-		h1 { font-size: 400%; }
+		h1 { font-size: 350%; }
 		h2 { font-size: 200%; }
 	}
 	</style>	
