@@ -8,14 +8,15 @@
 		src: url('fonts/BIFUR.ttf');
 	}
 	#footer {
- 		position: absolute;
+		position: absolute;
  		z-index: 10;
  		height: 3em;
 		bottom: 0;
+		font-family: arial;
 	}
 	#menu li {
 		text-align: center;		
-		float: right;
+		float: middle;
 		display: inline;
 	}
 	#menu * {
@@ -54,6 +55,8 @@
 		background-repeat:no-repeat;
 		background-position:center;
 		height:auto;
+		min-width:500px;
+		min-height:500px;
 	}
 	.swiper-container {
 		padding:30px 0;
@@ -114,7 +117,7 @@
 				<div class="swiper-slide" style="background-color:white"><a href=""></a></div>
 			</div>
 		</div>
-		<ul id="menu" listanimation enter="bounceInLeft" leave="bounceOutRight" elems="li" visibility="hidden">
+		<ul id="menu" listanimation enter="fadeIn" leave="fadeOut" elems="li" visibility="hidden">
 			<div id="title">
 				<h1>New Project</h1>
 				<h2>Comming Soon...</h2>
