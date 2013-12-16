@@ -4,8 +4,8 @@
 	<title>YourStudio</title>
   	<style>
 	@font-face {
-		font-family: BIFUR;
-		src: url('fonts/BIFUR.ttf');
+		font-family: HERAS;
+		src: url('fonts/HERAS.ttf');
 	}
 	#footer {
 		position: absolute;
@@ -38,10 +38,7 @@
 	}
 	#title * {
 		display: inline;
-		font-family: BIFUR;
-	}
-	#title h1 {
-		vertical-align: middle;
+		font-family: HERAS;
 	}
 	#menu {		
 		position: relative;
