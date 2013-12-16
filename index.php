@@ -122,9 +122,9 @@
 				<h1>New Project</h1>
 				<h2>Comming Soon...</h2>
 			</div>
-			<li duration="2s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/facebookx64.png"/></a></li>
-			<li duration="3s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/twitterx64.png"/></a></li>
-			<li duration="4s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/rssx64.png"/></a></li>
+			<li duration="2s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/facebook.png"/></a></li>
+			<li duration="3s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/twitter.png"/></a></li>
+			<li duration="4s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/gmail.png"/></a></li>
 		</ul>
 	</div>
 	<footer id="footer">
