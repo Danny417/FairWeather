@@ -1,162 +1,205 @@
-<!DOCTYPE html>
-<html id="ng-app" ng-app="construction">
-<head>
-	<title>YourStudio</title>
-  	<style>
-	@font-face {
-		font-family: HERAS;
-		src: url('fonts/HERAS.ttf');
-	}
-	#footer {
-		position: absolute;
- 		z-index: 10;
- 		height: 3em;
-		bottom: 0;
-		font-family: arial;
-	}
-	#menu li {
-		text-align: center;		
-		float: middle;
-		display: inline;
-	}
-	#menu * {
-		margin: 0 15px;
-	}
-	ul {
-		list-style-type:none;
-		margin:0;
-		padding:0;
-		overflow: hidden;
-	}
-	#title {
-		background: -webkit-linear-gradient(45deg, rgba(216,234,245,0.2), rgba(164,210,237,0.5), rgba(216,234,245,0.2)); /*Safari*/
-		background: -o-linear-gradient(45deg, rgba(216,234,245,0.2), rgba(164,210,237,0.5), rgba(216,234,245,0.2))); /*Opera 11-12*/
-		background: -moz-linear-gradient(45deg, rgba(216,234,245,0.2), rgba(164,210,237,0.5), rgba(216,234,245,0.2)); /*Fx 3.6-15*/
-		background: linear-gradient(45deg, rgba(216,234,245,0.2), rgba(255,255,255,0.5), rgba(216,234,245,0.2)); /*Standard*/
-		line-height: 64px;
-		min-height: 64px;
-	}
-	#title * {
-		display: inline;
-		font-family: HERAS;
-	}
-	#menu {		
-		position: relative;
-		min-height: 128px;
-		text-align: center;
-	}
-	h1 {
-		color: #A09494;
-	}
-	body {
-		background-repeat:no-repeat;
-		background-position:center;
-		height:auto;
-		min-width:500px;
-		min-height:500px;
-	}
-	.swiper-container {
-		padding:30px 0;
-		max-width: 1200px;
-	}
-	.swiper-slide {
-		width:auto;		
-		max-height:450px;	
-		min-height: 150px;
-		min-width: 100px;
-		background-size:cover;
-		background-repeat:no-repeat;
-		background-position:center;
-		border-radius:5px;
-		border-bottom:1px solid #555; 
-		-webkit-box-reflect: below 1px -webkit-linear-gradient(bottom, rgba(0,0,0,0.5) 0px, rgba(0,0,0,0) 20px);
-	}
-	@media screen {
-		body {
-			background: -webkit-linear-gradient(45deg, rgba(240,248,243,0.5), rgba(207,237,217,1), rgba(240,248,243,0.5)); /*Safari*/
-			background: -o-linear-gradient(45deg, rgba(240,248,243,0.5), rgba(207,237,217,1), rgba(240,248,243,0.5)); /*Opera 11-12*/
-			background: -moz-linear-gradient(45deg, rgba(240,248,243,0.5), rgba(207,237,217,1), rgba(240,248,243,0.5)); /*Fx 3.6-15*/
-			background: linear-gradient(45deg, rgba(240,248,243,0.5), rgba(207,237,217,1), rgba(240,248,243,0.5)); /*Standard*/
-		}
-	}
-	@media (max-width: 300px) {
-		h1 { font-size: 100%; }
-		h2 { font-size: 40%; }
-	}
+<?php
 
-	@media (min-width: 500px) {
-		h1 { font-size: 120%; }
-		h2 { font-size: 80%; }
-	}
+/*
+ *---------------------------------------------------------------
+ * APPLICATION ENVIRONMENT
+ *---------------------------------------------------------------
+ *
+ * You can load different configurations depending on your
+ * current environment. Setting the environment also influences
+ * things like logging and error reporting.
+ *
+ * This can be set to anything, but default usage is:
+ *
+ *     development
+ *     testing
+ *     production
+ *
+ * NOTE: If you change these, also change the error_reporting() code below
+ *
+ */
+	define('ENVIRONMENT', 'development');
+/*
+ *---------------------------------------------------------------
+ * ERROR REPORTING
+ *---------------------------------------------------------------
+ *
+ * Different environments will require different levels of error reporting.
+ * By default development will show errors but testing and live will hide them.
+ */
 
-	@media (min-width: 700px) {
-		h1 { font-size: 180%; }
-		h2 { font-size: 120%; }
-	}
-
-	@media (min-width: 1200px) {
-		h1 { font-size: 350%; }
-		h2 { font-size: 200%; }
-	}
-	</style>	
-	<link rel="stylesheet" href="css/animate.min.css">
-	<link rel="stylesheet" href="css/idangerous.swiper.css">
-	<link rel="stylesheet" href="css/idangerous.swiper.3dflow.css">
-	<script src="js/idangerous.swiper-2.0.min.js"></script>
-	<script src="js/idangerous.swiper.3dflow-2.0.js"></script>
-</head>
-<body>
-	<div id="page">
-		<div class="swiper-container">
-			<div class="swiper-wrapper" listanimation enter="flash" leave="" elems="div" visibility="visible">
-				<div class="swiper-slide" style="background-color:white"><a href=""></a></div>
-				<div class="swiper-slide" style="background-color:white"><a href=""></a></div>
-				<div class="swiper-slide" style="background-color:white"><a href=""></a></div>
-			</div>
-		</div>
-		<ul id="menu" listanimation enter="fadeIn" leave="fadeOut" elems="li" visibility="hidden">
-			<div id="title">
-				<h1>New Project</h1>
-				<h2>Comming Soon...</h2>
-			</div>
-			<li duration="2s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/facebook.png"/></a></li>
-			<li duration="3s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/twitter.png"/></a></li>
-			<li duration="4s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/gmail.png"/></a></li>
-		</ul>
-	</div>
-	<footer id="footer">
-		&copy; 2013 YourStudio
-	</footer>
+if (defined('ENVIRONMENT'))
+{
+	switch (ENVIRONMENT)
+	{
+		case 'development':
+			error_reporting(E_ALL);
+		break;
 	
-	<script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
-	<script src="js/main_construction.js"></script>
-	<script type="text/javascript">
-		var swiper = new Swiper('.swiper-container', {
-			slidesPerView:3,
-			loop: true,
-			//3D Flow:
-			tdFlow: {
-				rotate : 50,
-				stretch :0,
-				depth: 100,
-				modifier : 1,
-				shadows : true
-			}
-		});
-		function checkBrowserSize() {
-			$(".swiper-slide, .swiper-wrapper").css('height', window.innerHeight*0.5);
-			$("#page").css('height', window.innerHeight - 50);
-			$("#menu").css('height', '20%');
-			$("#title").css('height', '10%');
-			$('#menu img').css('margin-top', $("#menu").height()/4-32);
-		};
-		$(window).resize( function() {
-			checkBrowserSize();
-		});
-		$(document).ready(function() {
-			checkBrowserSize();
-		});
-	</script>
-</body>
-</html>
+		case 'testing':
+		case 'production':
+			error_reporting(0);
+		break;
+
+		default:
+			exit('The application environment is not set correctly.');
+	}
+}
+
+/*
+ *---------------------------------------------------------------
+ * SYSTEM FOLDER NAME
+ *---------------------------------------------------------------
+ *
+ * This variable must contain the name of your "system" folder.
+ * Include the path if the folder is not in the same  directory
+ * as this file.
+ *
+ */
+	$system_path = 'system';
+
+/*
+ *---------------------------------------------------------------
+ * APPLICATION FOLDER NAME
+ *---------------------------------------------------------------
+ *
+ * If you want this front controller to use a different "application"
+ * folder then the default one you can set its name here. The folder
+ * can also be renamed or relocated anywhere on your server.  If
+ * you do, use a full server path. For more info please see the user guide:
+ * http://codeigniter.com/user_guide/general/managing_apps.html
+ *
+ * NO TRAILING SLASH!
+ *
+ */
+	$application_folder = 'application';
+
+/*
+ * --------------------------------------------------------------------
+ * DEFAULT CONTROLLER
+ * --------------------------------------------------------------------
+ *
+ * Normally you will set your default controller in the routes.php file.
+ * You can, however, force a custom routing by hard-coding a
+ * specific controller class/function here.  For most applications, you
+ * WILL NOT set your routing here, but it's an option for those
+ * special instances where you might want to override the standard
+ * routing in a specific front controller that shares a common CI installation.
+ *
+ * IMPORTANT:  If you set the routing here, NO OTHER controller will be
+ * callable. In essence, this preference limits your application to ONE
+ * specific controller.  Leave the function name blank if you need
+ * to call functions dynamically via the URI.
+ *
+ * Un-comment the $routing array below to use this feature
+ *
+ */
+	// The directory name, relative to the "controllers" folder.  Leave blank
+	// if your controller is not in a sub-folder within the "controllers" folder
+	// $routing['directory'] = '';
+
+	// The controller class file name.  Example:  Mycontroller
+	// $routing['controller'] = '';
+
+	// The controller function you wish to be called.
+	// $routing['function']	= '';
+
+
+/*
+ * -------------------------------------------------------------------
+ *  CUSTOM CONFIG VALUES
+ * -------------------------------------------------------------------
+ *
+ * The $assign_to_config array below will be passed dynamically to the
+ * config class when initialized. This allows you to set custom config
+ * items or override any default config values found in the config.php file.
+ * This can be handy as it permits you to share one application between
+ * multiple front controller files, with each file containing different
+ * config values.
+ *
+ * Un-comment the $assign_to_config array below to use this feature
+ *
+ */
+	// $assign_to_config['name_of_config_item'] = 'value of config item';
+
+
+
+// --------------------------------------------------------------------
+// END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
+// --------------------------------------------------------------------
+
+/*
+ * ---------------------------------------------------------------
+ *  Resolve the system path for increased reliability
+ * ---------------------------------------------------------------
+ */
+
+	// Set the current directory correctly for CLI requests
+	if (defined('STDIN'))
+	{
+		chdir(dirname(__FILE__));
+	}
+
+	if (realpath($system_path) !== FALSE)
+	{
+		$system_path = realpath($system_path).'/';
+	}
+
+	// ensure there's a trailing slash
+	$system_path = rtrim($system_path, '/').'/';
+
+	// Is the system path correct?
+	if ( ! is_dir($system_path))
+	{
+		exit("Your system folder path does not appear to be set correctly. Please open the following file and correct this: ".pathinfo(__FILE__, PATHINFO_BASENAME));
+	}
+
+/*
+ * -------------------------------------------------------------------
+ *  Now that we know the path, set the main path constants
+ * -------------------------------------------------------------------
+ */
+	// The name of THIS file
+	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
+
+	// The PHP file extension
+	// this global constant is deprecated.
+	define('EXT', '.php');
+
+	// Path to the system folder
+	define('BASEPATH', str_replace("\\", "/", $system_path));
+
+	// Path to the front controller (this file)
+	define('FCPATH', str_replace(SELF, '', __FILE__));
+
+	// Name of the "system folder"
+	define('SYSDIR', trim(strrchr(trim(BASEPATH, '/'), '/'), '/'));
+
+
+	// The path to the "application" folder
+	if (is_dir($application_folder))
+	{
+		define('APPPATH', $application_folder.'/');
+	}
+	else
+	{
+		if ( ! is_dir(BASEPATH.$application_folder.'/'))
+		{
+			exit("Your application folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
+		}
+
+		define('APPPATH', BASEPATH.$application_folder.'/');
+	}
+
+/*
+ * --------------------------------------------------------------------
+ * LOAD THE BOOTSTRAP FILE
+ * --------------------------------------------------------------------
+ *
+ * And away we go...
+ *
+ */
+require_once BASEPATH.'core/CodeIgniter.php';
+
+/* End of file index.php */
+/* Location: ./index.php */
