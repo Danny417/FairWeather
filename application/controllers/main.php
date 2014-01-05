@@ -22,8 +22,13 @@ class main extends CI_Controller {
 		$this->load->view('mainView');
 	}
 	
-	public function test() {
-		echo "test";
+	/*
+	* Test function to get all rows from model
+	*/
+	public function GetAll() {
+		$this->load->model('visitors_model');
+		$data['query'] = $this->visitors_model->visitors_getall();
+		$this->load->view('visitors_viewall', $data);
 	}
 }
 
