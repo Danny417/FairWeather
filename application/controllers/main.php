@@ -30,6 +30,13 @@ class main extends CI_Controller {
 		$data['query'] = $this->visitors_model->visitors_getall();
 		$this->load->view('visitors_viewall', $data);
 	}
+	
+	public function addComment() {
+		$this->load->model('visitors_model');
+		$id = $this->visitors_model->insert_entry();
+		$this->load->model('comments_model');
+		$this->comments_model->insert_entry($id);
+	}
 }
 
 /* End of file main.php */

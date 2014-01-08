@@ -8,6 +8,9 @@ class Visitors_model extends CI_Model {
 		parent::__construct();
 	}
 	
+	function submitController() {
+	}
+	
 	function visitors_getall() {
 		$query = $this->db->get('visitors');
 		return $query->result();
@@ -25,7 +28,8 @@ class Visitors_model extends CI_Model {
 		*/
 		$this->name = $this->input->post('name', TRUE);
 		$this->email = $this->input->post('email', TRUE);
-		$this->db->insert('entries', $this);
+		$this->db->insert('visitors', $this);
+		return $this->db->insert_id();
 	}
 }
 

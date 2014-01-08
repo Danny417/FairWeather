@@ -20,14 +20,16 @@ class Comments_model extends CI_Model {
 		return $query->row_array();
 	}
 	
-	function insert_entry() {
+	function insert_entry($id) {
 		/*	
 		$this->input->post(NULL, TRUE); // returns all POST items with XSS filter 
 		$this->input->post(); // returns all POST items without XSS filter
 		*/
 		$this->subject = $this->input->post('subject', TRUE);
 		$this->content = $this->input->post('content', TRUE);
-		$this->db->insert('entries', $this);
+		$this->visitorId = $id;
+		$this->createDate = date('Y-m-d H:i:s');
+		$this->db->insert('comments', $this);
 	}
 }
 
