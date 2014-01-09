@@ -99,9 +99,10 @@
 		h2 { font-size: 200%; }
 	}
 	</style>	
-	<link rel="stylesheet" href="css/animate.min.css">
-	<link rel="stylesheet" href="css/idangerous.swiper.css">
-	<link rel="stylesheet" href="css/idangerous.swiper.3dflow.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css">
+	<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.3dflow.css">
+	<link rel="stylesheet" type="text/css" href="css/semantic.css">
 	<script src="js/idangerous.swiper-2.0.min.js"></script>
 	<script src="js/idangerous.swiper.3dflow-2.0.js"></script>
 </head>
@@ -124,6 +125,34 @@
 			<li duration="4s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/gmail.png"/></a></li>
 		</ul>
 	</div>
+	<div class="ui modal">
+		<i class="close icon"></i>
+		  <div class="header">
+			Modal Title
+		  </div>
+	  <div class="content">
+	  <div class="ui form segment">
+			<div class="field">
+			<input name="name" type="text" placeholder="Name">
+			</div>
+			<div class="field">
+			<input name="email" type="text" placeholder="Email">
+			</div>
+			<div class="field">
+			<input name="subject" type="text" placeholder="Subject">
+			</div>
+			<div class="field">
+			<label for="comment">User Text</label>
+			<textarea name="comment" ></textarea>
+		</div>
+</div>
+		
+	  </div>
+	  <div class="actions">
+		<div class="ui button">Cancel</div>
+		<div class="ui button">Submit</div>
+	  </div>
+	</div>
 	<footer id="footer">
 		&copy; 2013 YourStudio
 	</footer>
@@ -131,6 +160,7 @@
 	<script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
 	<script src="js/main_construction.js"></script>
+	<script src="js/semantic.js"></script>
 	<script type="text/javascript">
 		var swiper = new Swiper('.swiper-container', {
 			slidesPerView:3,
@@ -151,12 +181,41 @@
 			$("#title").css('height', '10%');
 			$('#menu img').css('margin-top', $("#menu").height()/4-32);
 		};
+		
 		$(window).resize( function() {
 			checkBrowserSize();
 		});
 		$(document).ready(function() {
 			checkBrowserSize();
+			$('.ui.form').form({        
+      givenName: {
+        identifier: 'name',
+        rules: [{
+          type: 'empty',
+          prompt: 'Please enter your name'
+        }]
+      },       
+      surname: {
+        identifier: 'comment',
+        rules: [{
+          type: 'empty',
+          prompt: 'Please enter your comments'
+        }]
+      },
+      subject: {
+        identifier: 'subject',
+        rules: [{
+          type: 'empty',
+          prompt: 'Please enter a subject'
+        }]
+      }	  
+	  }, {
+      on: 'blur',
+      inline: 'true'
+    });
+			
 		});
+
 	</script>
 </body>
 </html>
