@@ -1,0 +1,2 @@
+C:\Program Files\MySQL\MySQL Server *\bin\mysqld.exe -u dbAdmin -p
+password: password
