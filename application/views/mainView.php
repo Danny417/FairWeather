@@ -122,36 +122,35 @@
 			</div>
 			<li duration="2s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/facebook.png"/></a></li>
 			<li duration="3s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/twitter.png"/></a></li>
-			<li duration="4s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/gmail.png"/></a></li>
+			<li duration="4s"><a href="#" onclick="$('.modal').modal('show')"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/gmail.png"/></a></li>
 		</ul>
-	</div>
+	</div>	
 	<div class="ui modal">
 		<i class="close icon"></i>
-		  <div class="header">
+		<div class="header">
 			Modal Title
-		  </div>
-	  <div class="content">
-	  <div class="ui form segment">
-			<div class="field">
-			<input name="name" type="text" placeholder="Name">
-			</div>
-			<div class="field">
-			<input name="email" type="text" placeholder="Email">
-			</div>
-			<div class="field">
-			<input name="subject" type="text" placeholder="Subject">
-			</div>
-			<div class="field">
-			<label for="comment">User Text</label>
-			<textarea name="comment" ></textarea>
 		</div>
-</div>
-		
-	  </div>
-	  <div class="actions">
-		<div class="ui button">Cancel</div>
-		<div class="ui button">Submit</div>
-	  </div>
+		<div class="content">			
+			<div class="ui form segment">				
+				<div class="field">
+					<input name="name" type="text" placeholder="Name">
+				</div>
+				<div class="field">
+					<input name="email" type="text" placeholder="Email">
+				</div>
+				<div class="field">
+					<input name="subject" type="text" placeholder="Subject">
+				</div>
+				<div class="field">
+					<label for="content">User Text</label>
+					<textarea name="content" ></textarea>
+				</div>
+			</div>		
+		</div>
+		<div class="actions">
+			<div class="ui button">Cancel</div>
+			<input class="ui button" type="submit" value="Submit" onclick="submit()"/>
+		</div>
 	</div>
 	<footer id="footer">
 		&copy; 2013 YourStudio
@@ -188,31 +187,31 @@
 		$(document).ready(function() {
 			checkBrowserSize();
 			$('.ui.form').form({        
-      givenName: {
-        identifier: 'name',
-        rules: [{
-          type: 'empty',
-          prompt: 'Please enter your name'
-        }]
-      },       
-      surname: {
-        identifier: 'comment',
-        rules: [{
-          type: 'empty',
-          prompt: 'Please enter your comments'
-        }]
-      },
-      subject: {
-        identifier: 'subject',
-        rules: [{
-          type: 'empty',
-          prompt: 'Please enter a subject'
-        }]
-      }	  
-	  }, {
-      on: 'blur',
-      inline: 'true'
-    });
+		      givenName: {
+		        identifier: 'name',
+		        rules: [{
+		          type: 'empty',
+		          prompt: 'Please enter your name'
+		        }]
+		      },       
+		      surname: {
+		        identifier: 'comment',
+		        rules: [{
+		          type: 'empty',
+		          prompt: 'Please enter your comments'
+		        }]
+		      },
+		      subject: {
+		        identifier: 'subject',
+		        rules: [{
+		          type: 'empty',
+		          prompt: 'Please enter a subject'
+		        }]
+		      }	  
+			  }, {
+		      on: 'blur',
+		      inline: 'true'
+		    });
 			
 		});
 	//vincent comment

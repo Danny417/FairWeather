@@ -64,3 +64,23 @@ app.directive("elementanimation", function() {
 		});
 	};
 });
+
+function submit() {
+	var jsonData = {};
+	$('input[type=text], textarea').each(
+		function() { 
+			jsonData[$(this).attr("name")] = $(this).val();
+		});
+	$.ajax({
+	    type : "POST",
+	    url : "index.php/main/submit",
+	    data : jsonData,
+	    dataType : "text",
+	    success : function(msg) {
+	        alert(msg);
+	    },
+	    fail : function(msg) {
+	        alert("Comment did not go through.");
+	    }
+	});
+};
