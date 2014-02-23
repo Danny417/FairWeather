@@ -37,12 +37,14 @@ class main extends CI_Controller {
 		$id = $this->visitors_model->insert_entry();
 		$this->load->model('comments_model');
 		$this->comments_model->insert_entry($id);
-		echo "data stored";
+		echo "<div class='header'>Thank you!</div><div class='content'>".
+			"<div class='left'><i class='chat outline icon'></i></div>".
+			"<div class='right'><p>Your comment has been submitted.</p><p>We appericate your opinion.</p></div></div>".
+			"<div class='actions'>".
+				"<div class='ui button' onclick='cancel()'>Ok</div>".
+			"</div>";
 	}
 	
-	public function leaveComment() {
-	
-	}
 }
 
 /* End of file main.php */
