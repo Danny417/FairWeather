@@ -19,7 +19,6 @@ class main extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->helper('form');
 		$this->load->view('mainView');
 	}
 	
@@ -32,17 +31,21 @@ class main extends CI_Controller {
 		$this->load->view('visitors_viewall', $data);
 	}
 	
-	public function submit() {
+	public function addComment() {
 		$this->load->model('visitors_model');
 		$id = $this->visitors_model->insert_entry();
 		$this->load->model('comments_model');
 		$this->comments_model->insert_entry($id);
+<<<<<<< HEAD
 		echo "data stored";
 	}
 	
 	public function leaveComment() {
 	
 	}
+=======
+	}
+>>>>>>> 26430dd55cb3648025161103f9a9274e13ecd89a
 }
 
 /* End of file main.php */
