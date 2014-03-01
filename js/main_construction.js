@@ -1,6 +1,7 @@
 var app = angular.module("construction", []);
 var GLOBAL = {
-	browsers : ['webkit', 'ms', 'moz', 'o']
+	browsers : ['webkit', 'ms', 'moz', 'o'],
+	inAction : false
 };
 app.directive("listanimation", function() {
 	return function(scope, element, attrs) {
@@ -66,6 +67,8 @@ app.directive("elementanimation", function() {
 });
 
 function submit() {
+	if(GLOBAL.inAction || $('.ui.form').form('validate form') == false) return false;
+	GLOBAL.inAction = true;
 	var jsonData = {};
 	$('input[type=text], textarea').each(
 		function() { 
@@ -77,10 +80,20 @@ function submit() {
 	    data : jsonData,
 	    dataType : "text",
 	    success : function(msg) {
-	        alert(msg);
+	    	response(msg);
 	    },
 	    fail : function(msg) {
-	        alert("Comment did not go through.");
+	    	response(msg);
 	    }
 	});
+	
+};
+
+function response(msg) {	
+	$('.modal.response').html(msg);
+	$('.modal.response').modal('show');
+	GLOBAL.inAction = false;
+};
+function cancel() {
+	$('.modal').modal('hide');
 };

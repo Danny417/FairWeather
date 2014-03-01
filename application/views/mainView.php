@@ -4,8 +4,8 @@
 	<title>YourStudio</title>
   	<style>
 	@font-face {
-		font-family: HERAS;
-		src: url('fonts/HERAS.ttf');
+		font-family: Archistico_Bold;
+		src: url('fonts/Archistico_Bold.ttf');
 	}
 	#footer {
 		position: absolute;
@@ -38,22 +38,33 @@
 	}
 	#title * {
 		display: inline;
-		font-family: HERAS;
+		font-family: Archistico_Bold;
 	}
 	#menu {		
 		position: relative;
 		min-height: 128px;
 		text-align: center;
 	}
-	h1 {
+	<!--h1 {
 		color: #A09494;
-	}
+	}-->
 	body {
 		background-repeat:no-repeat;
 		background-position:center;
 		height:auto;
 		min-width:500px;
 		min-height:500px;
+		color:white;
+	}
+	
+	div.modalAction {
+		float:right;
+	}
+	div.response {
+		color:#FFFFFF;
+	}
+	div.response p {
+		font-size:20px;
 	}
 	.swiper-container {
 		padding:30px 0;
@@ -122,10 +133,10 @@
 			</div>
 			<li duration="2s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/facebook.png"/></a></li>
 			<li duration="3s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/twitter.png"/></a></li>
-			<li duration="4s"><a href="#" onclick="$('.modal').modal('show')"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/gmail.png"/></a></li>
+			<li duration="4s"><a href="" onclick="$('.modal.comment').modal('show')"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/gmail.png"/></a></li>
 		</ul>
 	</div>	
-	<div class="ui modal">
+	<div class="ui modal comment">
 		<i class="close icon"></i>
 		<div class="header">
 			Modal Title
@@ -145,12 +156,15 @@
 					<label for="content">User Text</label>
 					<textarea name="content" ></textarea>
 				</div>
+			</div>			
+			<div class="modalAction ui buttons">
+				<div class="ui button" onclick="cancel()">Cancel</div>
+				<div class="or"></div>
+				<div class="ui positive button" onclick="submit()">Submit</div>
 			</div>		
 		</div>
-		<div class="actions">
-			<div class="ui button">Cancel</div>
-			<input class="ui button" type="submit" value="Submit" onclick="submit()"/>
-		</div>
+	</div>
+	<div class="ui basic modal response">
 	</div>
 	<footer id="footer">
 		&copy; 2013 YourStudio
