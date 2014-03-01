@@ -2,16 +2,10 @@
 <html id="ng-app" ng-app="construction">
 <head>
 	<title>YourStudio</title>
-	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
-	<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css">
-	<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.3dflow.css">
-	<link rel="stylesheet" type="text/css" href="css/semantic.css">
-	<script src="js/idangerous.swiper-2.0.min.js"></script>
-	<script src="js/idangerous.swiper.3dflow-2.0.js"></script>
   	<style>
 	@font-face {
-		font-family: Archistico_Bold;
-		src: url('fonts/Archistico_Bold.ttf');
+		font-family: HERAS;
+		src: url('fonts/HERAS.ttf');
 	}
 	#footer {
 		position: absolute;
@@ -44,29 +38,22 @@
 	}
 	#title * {
 		display: inline;
-		font-family: Archistico_Bold;
+		font-family: HERAS;
 	}
 	#menu {		
 		position: relative;
 		min-height: 128px;
 		text-align: center;
 	}
-	<!--h1 {
+	h1 {
 		color: #A09494;
-	}commented out for now-->
+	}
 	body {
 		background-repeat:no-repeat;
 		background-position:center;
 		height:auto;
 		min-width:500px;
 		min-height:500px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-		color:white;
->>>>>>> 26430dd55cb3648025161103f9a9274e13ecd89a
-=======
->>>>>>> parent of 803ccee... Comment Form
 	}
 	.swiper-container {
 		padding:30px 0;
@@ -84,7 +71,6 @@
 		border-bottom:1px solid #555; 
 		-webkit-box-reflect: below 1px -webkit-linear-gradient(bottom, rgba(0,0,0,0.5) 0px, rgba(0,0,0,0) 20px);
 	}
-	
 	@media screen {
 		body {
 			background: -webkit-linear-gradient(45deg, rgba(240,248,243,0.5), rgba(207,237,217,1), rgba(240,248,243,0.5)); /*Safari*/
@@ -112,83 +98,13 @@
 		h1 { font-size: 350%; }
 		h2 { font-size: 200%; }
 	}
-	
-	.ui.header{							<!--added this.problem with semantic CSS-->
-		font-family:Arial; 
-		color:#E0E0E0;
-	}
-	.ui.form textarea, .ui.form input[type="text"], .ui.form textarea:focus, .ui.form input[type="text"]:focus{ 
-	  background-color:transparent;
-	  border-color:white;
-	  color:white;
-	  font-family:courier;
-	  font-size: .9em;
-	}	
-	
-	.ui.form.segment{
-		border-style:solid; 
-		border-color:white; 
-		border-width:1px; 
-		border-radius:0;
-		background-color: transparent; 
-	}
-	.ui.modal{
-		background-image:url("css/blueprint.jpg");
-		border:none;
-		border-radius:0;
-	}
-	
-	.ui.modal > .content{
-		background-color:transparent;
-	}
-
-	
-	.ui.form ::-webkit-input-placeholder {
-	  color: #CCCCCC;
-	}
-
-	.ui.form ::-moz-placeholder {
-	  color: #CCCCCC;
-	}
-
-	.ui.form :focus::-webkit-input-placeholder {
-	  color: #CCCCCC;
-	}
-
-	.ui.form :focus::-moz-placeholder {
-	  color: #CCCCCC;
-	}
-	
-	.ui.button, .ui.button:not(.loading):active, .ui.active.button:not(.loading):active {
-		background-color:transparent;
-		color:#CCCCCC;
-		border-style:solid; 
-		border-color:white; 
-		border-width:1px; 
-		border-radius:0;
-	}
-	.ui.pointing.left.label, .ui.pointing.label:before {
-		background-color:#CCCCCC;
-	}
-	
-	.ui.button:not(.loading):hover{
-		color:#FAFAFA;
-	}
-	
-	.ui.dimmer {
-		background-color: rgba(0, 0, 0, 0.7); <!--sets the dimmer backgroud color to darker/brighter-->
-	}
-	
-	.ui.modal > .header {
-	  margin: 0em;
-	  padding: 1.5rem 0rem 0rem 2em;
-	  font-size: 1.6em;
-	  font-weight: bold;
-	  border-radius: 0.325em 0.325em 0px 0px;
-	}
-	
-
 	</style>	
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css">
+	<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.3dflow.css">
+	<link rel="stylesheet" type="text/css" href="css/semantic.css">
+	<script src="js/idangerous.swiper-2.0.min.js"></script>
+	<script src="js/idangerous.swiper.3dflow-2.0.js"></script>
 </head>
 <body>
 	<div id="page">
@@ -206,10 +122,6 @@
 			</div>
 			<li duration="2s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/facebook.png"/></a></li>
 			<li duration="3s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/twitter.png"/></a></li>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 803ccee... Comment Form
 			<li duration="4s"><a href="#" onclick="$('.modal').modal('show')"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/gmail.png"/></a></li>
 		</ul>
 	</div>	
@@ -217,38 +129,18 @@
 		<i class="close icon"></i>
 		<div class="header">
 			Modal Title
-=======
-			<li duration="4s"><a href="#" onclick="$('.modal') .modal('show');"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/gmail.png"/></a></li>
-		</ul>
-	</div>
-	<div class="ui modal">
-		<div class="ui header" style="font-family:Archistico_Bold; font-size:2em;">	<!--unless i add style rules here, get times new roman!-->
-			Leave a comment
-			<div class="ui pointing left label" id="promptMessage" style="display:none;">
-			Please enter your
-			</div>
->>>>>>> 26430dd55cb3648025161103f9a9274e13ecd89a
 		</div>
-		<div class="content">
-				<div class="left" id="leftBox" style="min-width:50%;">			<!--put this style rule at the top-->
-					<div class="ui form segment">
-					<div class="field">
-						<input name="name" type="text" placeholder="Name" onBlur="isFilled(this)" autocomplete="off" spellcheck="false">
-					</div>
-					<div class="field">
-						<input name="email" type="text" placeholder="Email" onBlur = "updateMessage()" autocomplete="off" spellcheck="false">
-					</div>
-					<div class="field">
-						<input name="subject" type="text" placeholder="Subject" onBlur = "isFilled(this)" autocomplete="off" spellcheck="false">
-					</div>
-					</div>			
+		<div class="content">			
+			<div class="ui form segment">				
+				<div class="field">
+					<input name="name" type="text" placeholder="Name">
 				</div>
-				<div class="right">
-					<div class="ui form segment">
-					<textarea name="message" placeholder="What's on your mind?" onBlur = "isFilled(this)" spellcheck="false" style="height:10.99em; max-height:10.99em;"></textarea>	
-					</div>
+				<div class="field">
+					<input name="email" type="text" placeholder="Email">
 				</div>
-<<<<<<< HEAD
+				<div class="field">
+					<input name="subject" type="text" placeholder="Subject">
+				</div>
 				<div class="field">
 					<label for="content">User Text</label>
 					<textarea name="content" ></textarea>
@@ -258,19 +150,10 @@
 		<div class="actions">
 			<div class="ui button">Cancel</div>
 			<input class="ui button" type="submit" value="Submit" onclick="submit()"/>
-<<<<<<< HEAD
-=======
-		</div>
-		<div class="actions">
-		   <div class="ui button">Cancel</div>
-		   <div class="ui button"style="float:right; margin-right: 0em;">Submit</div>
->>>>>>> 26430dd55cb3648025161103f9a9274e13ecd89a
-=======
->>>>>>> parent of 803ccee... Comment Form
 		</div>
 	</div>
 	<footer id="footer">
-	&copy; 2013 YourStudio
+		&copy; 2013 YourStudio
 	</footer>
 	
 	<script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
@@ -278,8 +161,6 @@
 	<script src="js/main_construction.js"></script>
 	<script src="js/semantic.js"></script>
 	<script type="text/javascript">
-		var messageArray = new Array("false", "false", "false");  //this array will be used when updating the comment prompt message
-		var formsArray = new Array("name", "subject", "message"); 
 		var swiper = new Swiper('.swiper-container', {
 			slidesPerView:3,
 			loop: true,
@@ -300,69 +181,40 @@
 			$('#menu img').css('margin-top', $("#menu").height()/4-32);
 		};
 		
-		<!--added this function to validate the comment form - checks whether a field is blank-->
-		function isFilled(form){
-			var trimmedInput = form.value.trim();
-			var i = formsArray.indexOf(form.name);
-			if(form.value.length == 0 || trimmedInput.length == 0 ){		//if input text is only spaces, it counts it as non-empty. try to change
-				//update the prompt message and show the bubble
-				messageArray[i] = "true"; //this will need to be shown in the prompt message
-				updateMessage();
-			}
-			else{
-				messageArray[i] = "false";
-				updateMessage();
-			}
-		}
-		function updateMessage(){
-			//console.log(id);
-			var string = " ";
-			var count = 0;
-			for(var k=0; k< messageArray.length; k++)
-			{
-				if (messageArray[k] == "true")
-					count++;
-			}			
-			if(count > 0 )
-			{
-				for(var k=0; k< messageArray.length; k++)
-				{
-					if (messageArray[k] == "true")
-					{
-						if(string.length == 1 && count == 1)
-						{
-							string  = string + formsArray[k];
-						}
-						else if(string.length > 1 && count == 1)
-						{
-							string = string + " and " + formsArray[k];
-						}
-						else
-						{
-								string  = string + formsArray[k] + ", ";
-						}
-						count--;
-					}	
-				}
-			}
-			
-
-			document.getElementById("promptMessage").innerHTML = "Please enter your " + string;
-			if (string == " ")
-				document.getElementById("promptMessage").style.display = 'none'; //this makes the div appear
-			else
-				document.getElementById("promptMessage").style.display = 'inline'; //this makes the div appear
-		}
-		
 		$(window).resize( function() {
 			checkBrowserSize();
 		});
 		$(document).ready(function() {
 			checkBrowserSize();
-			console.log(document.getElementById("leftBox").height);
-						
+			$('.ui.form').form({        
+		      givenName: {
+		        identifier: 'name',
+		        rules: [{
+		          type: 'empty',
+		          prompt: 'Please enter your name'
+		        }]
+		      },       
+		      surname: {
+		        identifier: 'comment',
+		        rules: [{
+		          type: 'empty',
+		          prompt: 'Please enter your comments'
+		        }]
+		      },
+		      subject: {
+		        identifier: 'subject',
+		        rules: [{
+		          type: 'empty',
+		          prompt: 'Please enter a subject'
+		        }]
+		      }	  
+			  }, {
+		      on: 'blur',
+		      inline: 'true'
+		    });
+			
 		});
-
+	//vincent comment
 	</script>
 </body>
 </html>
