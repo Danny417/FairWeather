@@ -61,9 +61,12 @@
 		min-width:500px;
 		min-height:500px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		color:white;
 >>>>>>> 26430dd55cb3648025161103f9a9274e13ecd89a
+=======
+>>>>>>> parent of 803ccee... Comment Form
 	}
 	.swiper-container {
 		padding:30px 0;
@@ -204,6 +207,9 @@
 			<li duration="2s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/facebook.png"/></a></li>
 			<li duration="3s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/twitter.png"/></a></li>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 803ccee... Comment Form
 			<li duration="4s"><a href="#" onclick="$('.modal').modal('show')"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/gmail.png"/></a></li>
 		</ul>
 	</div>	
@@ -252,12 +258,15 @@
 		<div class="actions">
 			<div class="ui button">Cancel</div>
 			<input class="ui button" type="submit" value="Submit" onclick="submit()"/>
+<<<<<<< HEAD
 =======
 		</div>
 		<div class="actions">
 		   <div class="ui button">Cancel</div>
 		   <div class="ui button"style="float:right; margin-right: 0em;">Submit</div>
 >>>>>>> 26430dd55cb3648025161103f9a9274e13ecd89a
+=======
+>>>>>>> parent of 803ccee... Comment Form
 		</div>
 	</div>
 	<footer id="footer">
