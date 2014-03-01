@@ -4,8 +4,8 @@
 	<title>YourStudio</title>
   	<style>
 	@font-face {
-		font-family: Archistico_Bold;
-		src: url('fonts/Archistico_Bold.ttf');
+		font-family: HERAS;
+		src: url('fonts/HERAS.ttf');
 	}
 	#footer {
 		position: absolute;
@@ -38,23 +38,22 @@
 	}
 	#title * {
 		display: inline;
-		font-family: Archistico_Bold;
+		font-family: HERAS;
 	}
 	#menu {		
 		position: relative;
 		min-height: 128px;
 		text-align: center;
 	}
-	<!--h1 {
+	h1 {
 		color: #A09494;
-	}-->
+	}
 	body {
 		background-repeat:no-repeat;
 		background-position:center;
 		height:auto;
 		min-width:500px;
 		min-height:500px;
-		color:white;
 	}
 	
 	div.modalAction {
