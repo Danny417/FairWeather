@@ -7,6 +7,7 @@
 		font-family: HERAS;
 		src: url('fonts/HERAS.ttf');
 	}
+	/* hello */
 	#footer {
 		position: absolute;
  		z-index: 10;
