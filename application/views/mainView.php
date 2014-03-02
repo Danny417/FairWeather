@@ -7,6 +7,7 @@
 		font-family: HERAS;
 		src: url('fonts/HERAS.ttf');
 	}
+	/* hello */
 	#footer {
 		position: absolute;
  		z-index: 10;
@@ -22,6 +23,11 @@
 	#menu * {
 		margin: 0 15px;
 	}
+	
+	.draggable { <!-- specifies the size of the draggable items -->
+	width:auto;
+	heigh:auto;
+	}
 	ul {
 		list-style-type:none;
 		margin:0;
@@ -33,8 +39,6 @@
 		background: -o-linear-gradient(45deg, rgba(216,234,245,0.2), rgba(164,210,237,0.5), rgba(216,234,245,0.2))); /*Opera 11-12*/
 		background: -moz-linear-gradient(45deg, rgba(216,234,245,0.2), rgba(164,210,237,0.5), rgba(216,234,245,0.2)); /*Fx 3.6-15*/
 		background: linear-gradient(45deg, rgba(216,234,245,0.2), rgba(255,255,255,0.5), rgba(216,234,245,0.2)); /*Standard*/
-		
-		
 		line-height: 64px;
 		min-height: 64px;
 	}
@@ -44,91 +48,41 @@
 	}
 	#menu {		
 		position: relative;
-		height:700px;
-		
+		min-height: 128px;
+		height:70%;
 		text-align: center;
-		
 	}
-	
-	#draggable {  <!--specifies the size of the draggable item --> 
-	  width: auto;
-	  height: auto;
-	  } 
-	  
 	h1 {
 		color: #A09494;
 	}
 	body {
-		
-		background-image:url('img/blueprint.jpg'); <!-- this image we get from http://designmoo.com/4759/blueprint-texture/ -->
-		<!-- background-repeat:no-repeat;	
-		background-position:center; -->
+		background-image:url('img/blueprint.jpg'); <!-- this image we get from  http://designmoo.com/4759/blueprint-texture -->
 		height:auto;
 		min-width:500px;
 		min-height:500px;
 	}
-	/*
-	.swiper-container {
-		padding:30px 0;
-		max-width: 1200px;
-	}*/
-	/*
-	.swiper-slide {
-		width:auto;		
-		max-height:450px;	
-		min-height: 150px;
-		min-width: 100px;
-		background-size:cover;
-		background-repeat:no-repeat;
-		background-position:center;
-		border-radius:5px;
-		border-bottom:1px solid #555; 
-		 -webkit-box-reflect: below 1px -webkit-linear-gradient(bottom, rgba(0,0,0,0.5) 0px, rgba(0,0,0,0) 20px);
+	
+	div.modalAction {
+		float:right;
 	}
-	*/
-	/*
-		@media screen {
-	          
-		
-			 background: -webkit-linear-gradient(45deg, rgba(240,248,243,0.5), rgba(207,237,217,1), rgba(240,248,243,0.5)); /*Safari*/
-			background: -o-linear-gradient(45deg, rgba(240,248,243,0.5), rgba(207,237,217,1), rgba(240,248,243,0.5)); /*Opera 11-12*/
-			background: -moz-linear-gradient(45deg, rgba(240,248,243,0.5), rgba(207,237,217,1), rgba(240,248,243,0.5)); /*Fx 3.6-15*/
-			background: linear-gradient(45deg, rgba(240,248,243,0.5), rgba(207,237,217,1), rgba(240,248,243,0.5)); /*Standard*/
-		 } --> <!-- if the body is not included, the background is white depending on the background color specified on body. However, the background will be green if you leave the body here -->
+	div.response {
+		color:#FFFFFF;
 	}
-	<!--
-	@media (max-width: 300px) {
-		h1 { font-size: 100%; }
-		h2 { font-size: 40%; }
+	div.response p {
+		font-size:20px;
 	}
-
-	@media (min-width: 500px) {
-		h1 { font-size: 120%; }
-		h2 { font-size: 80%; }
-	}
-
-	@media (min-width: 700px) {
-		h1 { font-size: 180%; }
-		h2 { font-size: 120%; }
-	}
-
-	@media (min-width: 1200px) {
-		h1 { font-size: 350%; }
-		h2 { font-size: 200%; }
-	}
-	-->
-	*/
+	
+	
 	</style>	
 	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
 	<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css">
 	<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.3dflow.css">
 	<link rel="stylesheet" type="text/css" href="css/semantic.css">
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"> <!-- Jquery library for draggable function -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"> <!-- Jqery library -->
 	<script src="js/idangerous.swiper-2.0.min.js"></script>
 	<script src="js/idangerous.swiper.3dflow-2.0.js"></script>
 </head>
 <body background="blueprint.jpg">
-
 	<div id="page">
 		
 		<ul id="menu" listanimation enter="fadeIn" leave="fadeOut" elems="li" visibility="hidden">
@@ -136,40 +90,40 @@
 				<h1>New Project</h1>
 				<h2>Coming Soon...</h2>
 			</div>
-			<li duration="2s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/facebook-print.png" id="draggable"/></a></li>
-			<li duration="3s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/twitter-print.png" id="draggable"/></a></li>
-			
-			<li duration="4s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/gmail.png" class="draggable"/></a></li>
-		    
+			<li duration="2s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/facebook-print.png" class="draggable"/></a></li>
+			<li duration="3s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/twitter-print.png" class="draggable"/></a></li>
+			<li duration="4s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/gmail.png" class="draggable"/></a></li></a></li>
 		</ul>
-	</div>
-	<div class="ui modal">
+	</div>	
+	<div class="ui modal comment">
 		<i class="close icon"></i>
-		  <div class="header">
+		<div class="header">
 			Modal Title
-		  </div>
-	  <div class="content">
-	  <div class="ui form segment">
-			<div class="field">
-			<input name="name" type="text" placeholder="Name">
-			</div>
-			<div class="field">
-			<input name="email" type="text" placeholder="Email">
-			</div>
-			<div class="field">
-			<input name="subject" type="text" placeholder="Subject">
-			</div>
-			<div class="field">
-			<label for="comment">User Text</label>
-			<textarea name="comment" ></textarea>
 		</div>
-</div>
-		
-	  </div>
-	  <div class="actions">
-		<div class="ui button">Cancel</div>
-		<div class="ui button">Submit</div>
-	  </div>
+		<div class="content">			
+			<div class="ui form segment">				
+				<div class="field">
+					<input name="name" type="text" placeholder="Name">
+				</div>
+				<div class="field">
+					<input name="email" type="text" placeholder="Email">
+				</div>
+				<div class="field">
+					<input name="subject" type="text" placeholder="Subject">
+				</div>
+				<div class="field">
+					<label for="content">User Text</label>
+					<textarea name="content" ></textarea>
+				</div>
+			</div>			
+			<div class="modalAction ui buttons">
+				<div class="ui button" onclick="cancel()">Cancel</div>
+				<div class="or"></div>
+				<div class="ui positive button" onclick="submit()">Submit</div>
+			</div>		
+		</div>
+	</div>
+	<div class="ui basic modal response">
 	</div>
 	<footer id="footer">
 		&copy; 2013 YourStudio
@@ -179,14 +133,8 @@
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
 	<script src="js/main_construction.js"></script>
 	<script src="js/semantic.js"></script>
-	<script src="//code.jquery.com/jquery-1.10.2.js"></script> <!-- jquery library for draggable function -->
-    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script> <!-- another jquery library for draggble function -->
-	<script src="draggabilly.pkgd.js"> </script>
-	<script> $("#draggable").draggable()</script> <!-- draggable function -->
-	<script> var elem = document.querySelector('#draggable');
-	var draggie = new Draggabilly( elem);
-	
-	<script>
+	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script> <!-- library for draggable function -->
+	<script> $(".draggable").draggable()</script> <!-- draggable function -->
 	<script type="text/javascript">
 		var swiper = new Swiper('.swiper-container', {
 			slidesPerView:3,
@@ -205,7 +153,7 @@
 			$("#page").css('height', window.innerHeight - 50);
 			$("#menu").css('height', '20%');
 			$("#title").css('height', '10%');
-			<!--$('#menu img').css('margin-top', $("#menu").height()/4-32);-->
+			$('#menu img').css('margin-top', $("#menu").height()/4-32);
 		};
 		
 		$(window).resize( function() {
@@ -214,31 +162,31 @@
 		$(document).ready(function() {
 			checkBrowserSize();
 			$('.ui.form').form({        
-      givenName: {
-        identifier: 'name',
-        rules: [{
-          type: 'empty',
-          prompt: 'Please enter your name'
-        }]
-      },       
-      surname: {
-        identifier: 'comment',
-        rules: [{
-          type: 'empty',
-          prompt: 'Please enter your comments'
-        }]
-      },
-      subject: {
-        identifier: 'subject',
-        rules: [{
-          type: 'empty',
-          prompt: 'Please enter a subject'
-        }]
-      }	  
-	  }, {
-      on: 'blur',
-      inline: 'true'
-    });
+		      givenName: {
+		        identifier: 'name',
+		        rules: [{
+		          type: 'empty',
+		          prompt: 'Please enter your name'
+		        }]
+		      },       
+		      surname: {
+		        identifier: 'comment',
+		        rules: [{
+		          type: 'empty',
+		          prompt: 'Please enter your comments'
+		        }]
+		      },
+		      subject: {
+		        identifier: 'subject',
+		        rules: [{
+		          type: 'empty',
+		          prompt: 'Please enter a subject'
+		        }]
+		      }	  
+			  }, {
+		      on: 'blur',
+		      inline: 'true'
+		    });
 			
 		});
 	//vincent comment
