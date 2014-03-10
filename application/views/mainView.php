@@ -183,7 +183,7 @@
 				stretch :0,
 				depth: 100,
 				modifier : 1,
-				shadows : true
+				shadows : true //jacky comment
 			}
 		});
 		function checkBrowserSize() {
