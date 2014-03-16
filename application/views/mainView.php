@@ -3,10 +3,6 @@
 <head>
 	<title>YourStudio</title>
   	<style>
-	@font-face {
-		font-family: HERAS;
-		src: url('fonts/HERAS.ttf');
-	}
 	#footer {
 		position: absolute;
  		z-index: 10;
@@ -14,7 +10,10 @@
 		bottom: 0;
 		font-family: arial;
 	}
-
+	.draggable {
+		position: absolute;
+		left: -100px;
+	}
 	@media screen {
 		body {
 			background-position:center;
@@ -52,18 +51,15 @@
 	
 	</style>	
 	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
-	<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css">
-	<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.3dflow.css">
 	<link rel="stylesheet" type="text/css" href="css/semantic.css">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"> <!-- Jqery library -->
 
 </head>
 <body>
-		<!-- VW - Delete three slides from the page -->
-		<h1 id="construction"> Under Construction  </h1>			
-		<a href="#"><img elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/facebook-print.png" class="draggable"/></a>
-		<a href="#"><img elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/twitter-print.png" class="draggable"/></a>
-		<a href="#"><img elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/gmail.png" class="draggable"/></a>
+	<h1 id="construction"> Under Construction  </h1>			
+	<a href="#"><img elementanimation enter="" leave="flash" click="swing" src="img/buttons/facebook-print.png" class="draggable"/></a>
+	<a href="#"><img elementanimation enter="" leave="flash" click="swing" src="img/buttons/twitter-print.png" class="draggable"/></a>
+	<a href="#"><img elementanimation enter="" leave="flash" click="swing" src="img/buttons/gmail.png" class="draggable"/></a>
 	
 	<footer >
 		&copy; 2013 YourStudio
@@ -102,8 +98,6 @@
 	
 	<script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
-	<script src="js/main_construction.js"></script>
-	<script src="js/semantic.js"></script>
 	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script> <!-- library for draggable function -->
 	<script type="text/javascript">
 		function checkBrowserSize() {
@@ -116,11 +110,16 @@
 			checkBrowserSize();
 		});
 		$(document).ready(function() {
+			$(".draggable").each(function() {
+				$(this).css('left', Math.random()*window.innerWidth*0.75).css('top', Math.random()*window.innerHeight*0.75);
+			});
 			checkBrowserSize();
 			$(".draggable").draggable({containment: "body", scroll:false} );
+			
 
 		});
-	//vincent comment
-	</script>
+	</script>	
+	<script src="js/main_construction.js"></script>
+	<script src="js/semantic.js"></script>
 </body>
 </html>
