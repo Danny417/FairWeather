@@ -14,19 +14,16 @@
 		bottom: 0;
 		font-family: arial;
 	}
-	a {
-		position: absolute;
-	}
+
 	@media screen {
 		body {
-		
-		background-position:center;
-		min-width:500px;
-		min-height:400px;
+			background-position:center;
+			min-width:500px;
+			min-height:400px;
 			background-image:url('img/blueprint.jpg'); <!-- VW - this image we get from  http://designmoo.com/4759/blueprint-texture -->; /*Standard*/ 
 		} 
 	}
-<!--	@media (max-width: 300px) {
+	@media (max-width: 300px) {
 		h1 { font-size: 100%; }
 		h2 { font-size: 40%; }
 	}
@@ -44,7 +41,7 @@
 	@media (min-width: 1200px) {
 		h1 { font-size: 350%; }
 		h2 { font-size: 200%; }
-	}-->
+	}
 	
 	h1 {
 	font-size: 80px;
@@ -63,15 +60,10 @@
 </head>
 <body>
 		<!-- VW - Delete three slides from the page -->
-		<h1 id="construction"> Under Construction  </h1>
-		
-			
-			
-			<a href="#"><img  src="img/buttons/facebook-print.png" class="draggable"/></a>
-			<a href="#"><img  src="img/buttons/twitter-print.png" class="draggable"/></a>
-			<a href="#"><img  src="img/buttons/gmail.png" class="draggable"/></a></li></a>
-		
-		
+		<h1 id="construction"> Under Construction  </h1>			
+		<a href="#"><img elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/facebook-print.png" class="draggable"/></a>
+		<a href="#"><img elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/twitter-print.png" class="draggable"/></a>
+		<a href="#"><img elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/gmail.png" class="draggable"/></a>
 	
 	<footer >
 		&copy; 2013 YourStudio
