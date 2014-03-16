@@ -7,7 +7,6 @@
 		font-family: HERAS;
 		src: url('fonts/HERAS.ttf');
 	}
-	/* hello */
 	#footer {
 		position: absolute;
  		z-index: 10;
@@ -15,63 +14,44 @@
 		bottom: 0;
 		font-family: arial;
 	}
-	#menu li {
-		text-align: center;		
-		float: middle;
-		display: inline;
+	a {
+		position: absolute;
 	}
-	#menu * {
-		margin: 0 15px;
-	}
-	
-	.draggable { <!-- specifies the size of the draggable items -->
-	width:auto;
-	heigh:auto;
-	}
-	ul {
-		list-style-type:none;
-		margin:0;
-		padding:0;
-		overflow: hidden;
-	}
-	#title {
-		background: -webkit-linear-gradient(45deg, rgba(216,234,245,0.2), rgba(164,210,237,0.5), rgba(216,234,245,0.2)); /*Safari*/
-		background: -o-linear-gradient(45deg, rgba(216,234,245,0.2), rgba(164,210,237,0.5), rgba(216,234,245,0.2))); /*Opera 11-12*/
-		background: -moz-linear-gradient(45deg, rgba(216,234,245,0.2), rgba(164,210,237,0.5), rgba(216,234,245,0.2)); /*Fx 3.6-15*/
-		background: linear-gradient(45deg, rgba(216,234,245,0.2), rgba(255,255,255,0.5), rgba(216,234,245,0.2)); /*Standard*/
-		line-height: 64px;
-		min-height: 64px;
-	}
-	#title * {
-		display: inline;
-		font-family: HERAS;
-	}
-	#menu {		
-		position: relative;
-		min-height: 128px;
-		height:70%;
-		text-align: center;
-	}
-	h1 {
-		color: #A09494;
-	}
-	body {
-		background-image:url('img/blueprint.jpg'); <!-- this image we get from  http://designmoo.com/4759/blueprint-texture -->
-		height:auto;
+	@media screen {
+		body {
+		
+		background-position:center;
 		min-width:500px;
-		min-height:500px;
+		min-height:400px;
+			background-image:url('img/blueprint.jpg'); <!-- VW - this image we get from  http://designmoo.com/4759/blueprint-texture -->; /*Standard*/ 
+		} 
 	}
+<!--	@media (max-width: 300px) {
+		h1 { font-size: 100%; }
+		h2 { font-size: 40%; }
+	}
+
+	@media (min-width: 500px) {
+		h1 { font-size: 120%; }
+		h2 { font-size: 80%; }
+	}
+
+	@media (min-width: 700px) {
+		h1 { font-size: 180%; }
+		h2 { font-size: 120%; }
+	}
+
+	@media (min-width: 1200px) {
+		h1 { font-size: 350%; }
+		h2 { font-size: 200%; }
+	}-->
 	
-	div.modalAction {
-		float:right;
-	}
-	div.response {
-		color:#FFFFFF;
-	}
-	div.response p {
-		font-size:20px;
-	}
+	h1 {
+	font-size: 80px;
+	text-align:center;
+	margin: 0 auto;
 	
+	}
 	
 	</style>	
 	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
@@ -79,22 +59,24 @@
 	<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.3dflow.css">
 	<link rel="stylesheet" type="text/css" href="css/semantic.css">
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"> <!-- Jqery library -->
-	<script src="js/idangerous.swiper-2.0.min.js"></script>
-	<script src="js/idangerous.swiper.3dflow-2.0.js"></script>
+
 </head>
-<body background="blueprint.jpg">
-	<div id="page">
+<body>
+		<!-- VW - Delete three slides from the page -->
+		<h1 id="construction"> Under Construction  </h1>
 		
-		<ul id="menu" listanimation enter="fadeIn" leave="fadeOut" elems="li" visibility="hidden">
-			<div id="title">
-				<h1>New Project</h1>
-				<h2>Coming Soon...</h2>
-			</div>
-			<li duration="2s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/facebook-print.png" class="draggable"/></a></li>
-			<li duration="3s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/twitter-print.png" class="draggable"/></a></li>
-			<li duration="4s"><a href="#"><img duration="2s" elementanimation enter="swing" leave="" click="flipOutY" src="img/buttons/gmail.png" class="draggable"/></a></li></a></li>
-		</ul>
-	</div>	
+			
+			
+			<a href="#"><img  src="img/buttons/facebook-print.png" class="draggable"/></a>
+			<a href="#"><img  src="img/buttons/twitter-print.png" class="draggable"/></a>
+			<a href="#"><img  src="img/buttons/gmail.png" class="draggable"/></a></li></a>
+		
+		
+	
+	<footer >
+		&copy; 2013 YourStudio
+	</footer>
+	
 	<div class="ui modal comment">
 		<i class="close icon"></i>
 		<div class="header">
@@ -125,69 +107,26 @@
 	</div>
 	<div class="ui basic modal response">
 	</div>
-	<footer id="footer">
-		&copy; 2013 YourStudio
-	</footer>
 	
 	<script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
 	<script src="js/main_construction.js"></script>
 	<script src="js/semantic.js"></script>
 	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script> <!-- library for draggable function -->
-	<script> $(".draggable").draggable()</script> <!-- draggable function -->
 	<script type="text/javascript">
-		var swiper = new Swiper('.swiper-container', {
-			slidesPerView:3,
-			loop: true,
-			//3D Flow:
-			tdFlow: {
-				rotate : 50,
-				stretch :0,
-				depth: 100,
-				modifier : 1,
-				shadows : true
-			}
-		});
 		function checkBrowserSize() {
-			$(".swiper-slide, .swiper-wrapper").css('height', window.innerHeight*0.5);
-			$("#page").css('height', window.innerHeight - 50);
-			$("#menu").css('height', '20%');
-			$("#title").css('height', '10%');
-			$('#menu img').css('margin-top', $("#menu").height()/4-32);
+			$('body').css('height', window.innerHeight);
+			//$("#menu").css('height', $("body").height());/* VW - Adjust the size of the menu */
+			//$('#menu img').css('margin-top', $("#menu").height()/4);
 		};
-		
+
 		$(window).resize( function() {
 			checkBrowserSize();
 		});
 		$(document).ready(function() {
 			checkBrowserSize();
-			$('.ui.form').form({        
-		      givenName: {
-		        identifier: 'name',
-		        rules: [{
-		          type: 'empty',
-		          prompt: 'Please enter your name'
-		        }]
-		      },       
-		      surname: {
-		        identifier: 'comment',
-		        rules: [{
-		          type: 'empty',
-		          prompt: 'Please enter your comments'
-		        }]
-		      },
-		      subject: {
-		        identifier: 'subject',
-		        rules: [{
-		          type: 'empty',
-		          prompt: 'Please enter a subject'
-		        }]
-		      }	  
-			  }, {
-		      on: 'blur',
-		      inline: 'true'
-		    });
-			
+			$(".draggable").draggable({containment: "body", scroll:false} );
+
 		});
 	//vincent comment
 	</script>
