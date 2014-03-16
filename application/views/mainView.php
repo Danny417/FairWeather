@@ -280,7 +280,7 @@
 			$('#menu img').css('margin-top', $("#menu").height()/4-32);
 		};
 		
-		<!--added this function to validate the comment form - checks whether a field is blank-->
+		<!--added this function to validate the comment form - checks whether a field is blank
 		function isFilled(form){
 			var trimmedInput = form.value.trim();
 			var i = formsArray.indexOf(form.name);
