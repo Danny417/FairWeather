@@ -12,12 +12,18 @@
 	left:0;
     color: #333333;
     font-family: ‘Lucida Console’, Monaco, monospace;
-}
+    }
+        
 	.draggable {
 		position: absolute;
 		left: -100px;
 	}
-	@media screen {
+    
+    .contain{
+        position: absolute;            
+    }
+        
+    @media screen {
 		body {
 			background-position:center;
 			min-width:500px;
@@ -60,14 +66,11 @@
 
 </head>
 <body>
+    <div class="contain">
 	<h1 id="construction"> Under Construction  </h1>			
 	<a href="#"><img elementanimation enter="" leave="flash" click="swing" src="img/buttons/facebook-print.png" class="draggable"/></a>
 	<a href="#"><img elementanimation enter="" leave="flash" click="swing" src="img/buttons/twitter-print.png" class="draggable"/></a>
 	<a href="#"><img elementanimation enter="" leave="flash" click="swing" src="img/buttons/gmail.png" class="draggable"/></a>
-	
-	<footer id="footer">
-		&copy; 2013 YourStudio
-	</footer>
 	
 	<div class="ui modal comment">
 		<i class="close icon"></i>
@@ -99,7 +102,10 @@
 	</div>
 	<div class="ui basic modal response">
 	</div>
-	
+    </div>
+    <footer id="footer">
+		&copy; 2013 YourStudio
+	</footer>
 	<script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
 	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script> <!-- library for draggable function -->
@@ -116,11 +122,14 @@
 		$(window).resize( function() {
 			checkBrowserSize();
 		  });
+        
 		$(document).ready(function() {
 			$(".draggable").each(function() {
 				$(this).css('left', Math.random()*window.innerWidth*0.75).css('top', Math.random()*window.innerHeight*0.75);
 			});
+            
 			checkBrowserSize();
+            
 			$(".draggable").draggable({
                 containment: "body", scroll:false
             });
@@ -129,10 +138,15 @@
                 $(this).dimBackground(); 
             });
             
+            $(".contain").mouseleave(function(){
+                $(".draggable").undim();
+            });
+            
             $(".draggable").mouseup(function(){
                 $(this).undim(); 
-            });            
+            });
+            
 		});
-	</script>	
+	</script>
 </body>
 </html>
