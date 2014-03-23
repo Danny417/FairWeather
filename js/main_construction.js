@@ -41,23 +41,24 @@ app.directive("elementanimation", function() {
 			element.css(attr, element.attr('duration'));
 		}
 		element.bind("mouseenter", function() {
-			if(element.hasClass('animated '+attrs.click)) return false;
-			element.removeClass('animated '+attrs.leave).addClass(attrs.enter+' animated');
+			if(element.hasClass('animated '+attrs.click) || attrs.enter == '') return false;
+			element.removeClass('animated').removeClass(attrs.leave).addClass(attrs.enter+' animated');
 			element.unbind(event);
 			element.one(event, function() {
 					element.removeClass('animated').removeClass(attrs.enter);
 				});
 		});
 		element.bind("mouseleave", function() {	
-			if(element.hasClass('animated '+attrs.click)) return false;
-			element.removeClass(attrs.enter+' animated').addClass('animated '+attrs.leave);
+			if(element.hasClass('animated') || attrs.leave == '') return false;
+			element.removeClass(attrs.enter).removeClass('animated').addClass('animated '+attrs.leave);
 			element.unbind(event);
 			element.one(event, function() {
 					element.removeClass('animated').removeClass(attrs.leave);
 				});
 		});
 		element.bind("click", function() {
-			element.removeClass(attrs.enter+' animated').addClass('animated '+attrs.click);
+			if(attrs.click == '') return;
+			element.removeClass(attrs.enter).removeClass('animated').addClass('animated '+attrs.click);
 			element.unbind(event);
 			element.one(event, function() {
 				element.removeClass('animated').removeClass(attrs.click);
