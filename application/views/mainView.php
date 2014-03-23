@@ -103,6 +103,9 @@
 	<script src="http://codeorigin.jquery.com/jquery-2.0.3.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
 	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script> <!-- library for draggable function -->
+    <script src="js/jquery.dim-background.js"></script>
+    <script src="js/main_construction.js"></script>
+	<script src="js/semantic.js"></script>
 	<script type="text/javascript">
 		function checkBrowserSize() {
 			$('body').css('height', window.innerHeight);
@@ -112,18 +115,24 @@
 
 		$(window).resize( function() {
 			checkBrowserSize();
-		});
+		  });
 		$(document).ready(function() {
 			$(".draggable").each(function() {
 				$(this).css('left', Math.random()*window.innerWidth*0.75).css('top', Math.random()*window.innerHeight*0.75);
 			});
 			checkBrowserSize();
-			$(".draggable").draggable({containment: "body", scroll:false} );
-			
-
+			$(".draggable").draggable({
+                containment: "body", scroll:false
+            });
+            
+            $(".draggable").mousedown(function(){
+                $(this).dimBackground(); 
+            });
+            
+            $(".draggable").mouseup(function(){
+                $(this).undim(); 
+            });            
 		});
 	</script>	
-	<script src="js/main_construction.js"></script>
-	<script src="js/semantic.js"></script>
 </body>
 </html>
