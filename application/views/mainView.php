@@ -2,6 +2,12 @@
 <html id="ng-app" ng-app="construction">
 <head>
 	<title>YourStudio</title>
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css">
+	<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.3dflow.css">
+	<link rel="stylesheet" type="text/css" href="css/semantic.css">
+	<script src="js/idangerous.swiper-2.0.min.js"></script>
+	<script src="js/idangerous.swiper.3dflow-2.0.js"></script>
   	<style>
 
     #footer {
@@ -73,26 +79,33 @@
 	<a href="#"><img elementanimation enter="" leave="flash" click="swing" src="img/buttons/gmail.png" class="draggable"/></a>
 	
 	<div class="ui modal comment">
-		<i class="close icon"></i>
-		<div class="header">
-			Modal Title
+		<div class="ui header" style="font-family:Archistico_Bold; font-size:2em;">	<!--unless i add style rules here, get times new roman!-->
+			Leave a comment
+			<div class="ui pointing left label" id="promptMessage" style="display:none;">
+			Please enter your
+			</div>
 		</div>
 		<div class="content">			
-			<div class="ui form segment">				
-				<div class="field">
-					<input name="name" type="text" placeholder="Name">
+				<div class="left" id="leftBox" style="min-width:50%;">			<!--put this style rule at the top-->		
+					<div class="ui form segment">
+					<div class="field">
+						<input name="name" type="text" placeholder="Name" onBlur="isFilled(this)" autocomplete="off" spellcheck="false">
+					</div>
+					<div class="field">
+						<input name="email" type="text" placeholder="Email" onBlur = "updateMessage()" autocomplete="off" spellcheck="false">
+					</div>
+					<div class="field">
+						<input name="subject" type="text" placeholder="Subject" onBlur = "isFilled(this)" autocomplete="off" spellcheck="false">
+					</div>
+					</div>			
 				</div>
-				<div class="field">
-					<input name="email" type="text" placeholder="Email">
-				</div>
-				<div class="field">
-					<input name="subject" type="text" placeholder="Subject">
-				</div>
-				<div class="field">
-					<label for="content">User Text</label>
-					<textarea name="content" ></textarea>
+				<div class="right">
+					<div class="ui form segment">
+					<textarea name="message" placeholder="What's on your mind?" onBlur = "isFilled(this)" spellcheck="false" style="height:10.99em; max-height:10.99em;"></textarea>	
+					</div>
 				</div>
 			</div>			
+
 			<div class="modalAction ui buttons">
 				<div class="ui button" onclick="cancel()">Cancel</div>
 				<div class="or"></div>
@@ -119,6 +132,7 @@
 			//$('#menu img').css('margin-top', $("#menu").height()/4);
 		};
 
+		<!--added this function to validate the comment form - checks whether a field is blank
 		$(window).resize( function() {
 			checkBrowserSize();
 		  });
