@@ -3,13 +3,16 @@
 <head>
 	<title>YourStudio</title>
   	<style>
-	#footer {
-		position: absolute;
- 		z-index: 10;
- 		height: 3em;
-		bottom: 0;
-		font-family: arial;
-	}
+
+    #footer {
+	width:100%;
+	height:0;
+	position:absolute;
+	bottom:0;
+	left:0;
+    color: #333333;
+    font-family: ‘Lucida Console’, Monaco, monospace;
+}
 	.draggable {
 		position: absolute;
 		left: -100px;
@@ -46,7 +49,8 @@
 	font-size: 80px;
 	text-align:center;
 	margin: 0 auto;
-	
+    color: #333333;
+    font-family: ‘Lucida Console’, Monaco, monospace;
 	}
 	
 	</style>	
@@ -61,7 +65,7 @@
 	<a href="#"><img elementanimation enter="" leave="flash" click="swing" src="img/buttons/twitter-print.png" class="draggable"/></a>
 	<a href="#"><img elementanimation enter="" leave="flash" click="swing" src="img/buttons/gmail.png" class="draggable"/></a>
 	
-	<footer >
+	<footer id="footer">
 		&copy; 2013 YourStudio
 	</footer>
 	
