@@ -98,3 +98,7 @@ function response(msg) {
 function cancel() {
 	$('.modal').modal('hide');
 };
+
+function checkBrowserSize() {
+	$('body').css('height', window.innerHeight);
+};
