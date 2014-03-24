@@ -13,14 +13,13 @@
 		
 	    #footer {
 			width:100%;
-			height:0;
 			bottom:0;
 			left:0;
 		    color: #333333;
 		    font-family: ‘Lucida Console’, Monaco, monospace;
 	    }
 	        
-		.draggable, .contain, #footer {
+		.draggable, #footer {
 			position: absolute;
 		}
 	    
@@ -30,6 +29,7 @@
 	        
 	    @media screen {
 			body {
+				margin: 0px;
 				background-position:center;
 				min-width:500px;
 				min-height:400px;
@@ -64,9 +64,9 @@
 <body>
     <div class="contain">
 		<h1 id="construction"> Under Construction  </h1>			
-		<a href="#"><img elementanimation enter="" leave="flash" click="swing" src="img/buttons/facebook-print.png" class="draggable"/></a>
-		<a href="#"><img elementanimation enter="" leave="flash" click="swing" src="img/buttons/twitter-print.png" class="draggable"/></a>
-		<a href="#"><img elementanimation enter="" leave="flash" click="swing" src="img/buttons/gmail.png" class="draggable"/></a>
+		<img elementanimation enter="" leave="flash" click="swing" src="img/buttons/facebook-print.png" class="draggable"/>
+		<img elementanimation enter="" leave="flash" click="swing" src="img/buttons/twitter-print.png" class="draggable"/>
+		<img elementanimation enter="" leave="flash" click="swing" src="img/buttons/gmail.png" class="draggable"/>
 		
 		<div class="ui modal comment">
 			<div class="ui header" style="font-family:Archistico_Bold; font-size:2em;">	<!--unless i add style rules here, get times new roman!-->
