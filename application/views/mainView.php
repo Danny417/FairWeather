@@ -62,46 +62,44 @@
 
 </head>
 <body>
-    <div class="contain">
-		<h1 id="construction"> Under Construction  </h1>			
-		<img elementanimation enter="" leave="flash" click="swing" src="img/buttons/facebook-print.png" class="draggable"/>
-		<img elementanimation enter="" leave="flash" click="swing" src="img/buttons/twitter-print.png" class="draggable"/>
-		<img elementanimation enter="" leave="flash" click="swing" src="img/buttons/gmail.png" class="draggable"/>
-		
-		<div class="ui modal comment">
-			<div class="ui header" style="font-family:Archistico_Bold; font-size:2em;">	<!--unless i add style rules here, get times new roman!-->
-				Leave a comment
-				<div class="ui pointing left label" id="promptMessage" style="display:none;">
-				Please enter your
+	<h1 id="construction"> Under Construction  </h1>			
+	<img elementanimation enter="" leave="flash" click="swing" src="img/buttons/facebook-print.png" class="draggable"/>
+	<img elementanimation enter="" leave="flash" click="swing" src="img/buttons/twitter-print.png" class="draggable"/>
+	<img elementanimation enter="" leave="flash" click="swing" src="img/buttons/gmail.png" class="draggable"/>
+	
+	<div class="ui modal comment">
+		<div class="ui header" style="font-family:Archistico_Bold; font-size:2em;">	<!--unless i add style rules here, get times new roman!-->
+			Leave a comment
+			<div class="ui pointing left label" id="promptMessage" style="display:none;">
+			Please enter your
+			</div>
+		</div>
+		<div class="content">			
+			<div class="left" id="leftBox" style="min-width:50%;">			<!--put this style rule at the top-->		
+				<div class="ui form segment">
+				<div class="field">
+					<input name="name" type="text" placeholder="Name" onBlur="isFilled(this)" autocomplete="off" spellcheck="false">
+				</div>
+				<div class="field">
+					<input name="email" type="text" placeholder="Email" onBlur = "updateMessage()" autocomplete="off" spellcheck="false">
+				</div>
+				<div class="field">
+					<input name="subject" type="text" placeholder="Subject" onBlur = "isFilled(this)" autocomplete="off" spellcheck="false">
+				</div>
+				</div>			
+			</div>
+			<div class="right">
+				<div class="ui form segment">
+				<textarea name="message" placeholder="What's on your mind?" onBlur = "isFilled(this)" spellcheck="false" style="height:10.99em; max-height:10.99em;"></textarea>	
 				</div>
 			</div>
-			<div class="content">			
-				<div class="left" id="leftBox" style="min-width:50%;">			<!--put this style rule at the top-->		
-					<div class="ui form segment">
-					<div class="field">
-						<input name="name" type="text" placeholder="Name" onBlur="isFilled(this)" autocomplete="off" spellcheck="false">
-					</div>
-					<div class="field">
-						<input name="email" type="text" placeholder="Email" onBlur = "updateMessage()" autocomplete="off" spellcheck="false">
-					</div>
-					<div class="field">
-						<input name="subject" type="text" placeholder="Subject" onBlur = "isFilled(this)" autocomplete="off" spellcheck="false">
-					</div>
-					</div>			
-				</div>
-				<div class="right">
-					<div class="ui form segment">
-					<textarea name="message" placeholder="What's on your mind?" onBlur = "isFilled(this)" spellcheck="false" style="height:10.99em; max-height:10.99em;"></textarea>	
-					</div>
-				</div>
-			</div>			
-	
-			<div class="modalAction ui buttons">
-				<div class="ui button" onclick="cancel()">Cancel</div>
-				<div class="or"></div>
-				<div class="ui positive button" onclick="submit()">Submit</div>
-			</div>		
-		</div>
+		</div>			
+
+		<div class="modalAction ui buttons">
+			<div class="ui button" onclick="cancel()">Cancel</div>
+			<div class="or"></div>
+			<div class="ui positive button" onclick="submit()">Submit</div>
+		</div>		
 	</div>
 	<div class="ui basic modal response">
 	</div>
@@ -127,14 +125,24 @@
 			checkBrowserSize();
             
 			$(".draggable").draggable({
-                containment: "body", scroll:false
-            }).mousedown(function(){
-                $(this).dimBackground(); 
-            }).mouseleave(function(){
-                $(".draggable").undim();
-            }).mouseup(function(){
-                $(this).undim(); 
+                containment: "document", 
+                scroll: false,
+                cursor: "crosshair",
+                delay: 300,
+                snap: true,
+            	stop: function(){
+	                $(this).undim(); 
+	            }
+            }).mousedown(function(e) {
+            	clearTimeout(GLOBAL.timeOut);
+			    GLOBAL.timeOut = setTimeout(function() {
+			    	$(".draggable").dimBackground();  
+			    }, 350);
             });
+            $(document).mouseup(function(e) {
+			    clearTimeout(GLOBAL.timeOut);
+			    $(".draggable").undim();  
+			});
             
 		});
 	</script>

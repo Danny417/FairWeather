@@ -1,7 +1,8 @@
 var app = angular.module("construction", []);
 var GLOBAL = {
 	browsers : ['webkit', 'ms', 'moz', 'o'],
-	inAction : false
+	inAction : false,
+	timeOut : 0
 };
 app.directive("listanimation", function() {
 	return function(scope, element, attrs) {
