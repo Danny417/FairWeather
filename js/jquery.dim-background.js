@@ -151,7 +151,7 @@
     
     // Plugin default options
     $.fn.dimBackground.defaults = {
-        darkness        : 0.75,     // 0 means no dimming, 1 means completely dark
+        darkness        : 0.4,     // 0 means no dimming, 1 means completely dark
         fadeInDuration  : 300,      // in ms
         fadeOutDuration : 300,      // in ms
         curtainZIndex   : 999
