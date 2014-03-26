@@ -1,0 +1,175 @@
+/*
+ *construction page and comment form CSS
+ *
+ */
+ @font-face {
+		font-family: Archistico_Bold;
+		src: url('../fonts/Archistico_Bold.ttf');
+	}
+	#footer {
+		position: absolute;
+ 		z-index: 10;
+ 		height: 3em;
+		bottom: 0;
+		font-family: arial;
+	}
+	#menu li {
+		text-align: center;		
+		float: middle;
+		display: inline;
+	}
+	#menu * {
+		margin: 0 15px;
+	}
+	ul {
+		list-style-type:none;
+		margin:0;
+		padding:0;
+		overflow: hidden;
+	}
+	#title {
+		background: -webkit-linear-gradient(45deg, rgba(216,234,245,0.2), rgba(164,210,237,0.5), rgba(216,234,245,0.2)); /*Safari*/
+		background: -o-linear-gradient(45deg, rgba(216,234,245,0.2), rgba(164,210,237,0.5), rgba(216,234,245,0.2))); /*Opera 11-12*/
+		background: -moz-linear-gradient(45deg, rgba(216,234,245,0.2), rgba(164,210,237,0.5), rgba(216,234,245,0.2)); /*Fx 3.6-15*/
+		background: linear-gradient(45deg, rgba(216,234,245,0.2), rgba(255,255,255,0.5), rgba(216,234,245,0.2)); /*Standard*/
+		line-height: 64px;
+		min-height: 64px;
+	}
+	#title * {
+		display: inline;
+		font-family: Archistico_Bold;
+	}
+	#menu {		
+		position: relative;
+		min-height: 128px;
+		text-align: center;
+	}
+	h1, h2 {
+		color: #A09494;
+	}
+	body {
+		background-repeat:no-repeat;
+		background-position:center;
+		height:auto;
+		min-width:500px;
+		min-height:500px;
+		color:white;
+	}
+	.swiper-container {
+		padding:30px 0;
+		max-width: 1200px;
+	}
+	.swiper-slide {
+		width:auto;		
+		max-height:450px;	
+		min-height: 150px;
+		min-width: 100px;
+		background-size:cover;
+		background-repeat:no-repeat;
+		background-position:center;
+		border-radius:5px;
+		border-bottom:1px solid #555; 
+		-webkit-box-reflect: below 1px -webkit-linear-gradient(bottom, rgba(0,0,0,0.5) 0px, rgba(0,0,0,0) 20px);
+	}
+	
+	@media screen {
+		body {
+			background: -webkit-linear-gradient(45deg, rgba(240,248,243,0.5), rgba(207,237,217,1), rgba(240,248,243,0.5)); /*Safari*/
+			background: -o-linear-gradient(45deg, rgba(240,248,243,0.5), rgba(207,237,217,1), rgba(240,248,243,0.5)); /*Opera 11-12*/
+			background: -moz-linear-gradient(45deg, rgba(240,248,243,0.5), rgba(207,237,217,1), rgba(240,248,243,0.5)); /*Fx 3.6-15*/
+			background: linear-gradient(45deg, rgba(240,248,243,0.5), rgba(207,237,217,1), rgba(240,248,243,0.5)); /*Standard*/
+		}
+	}
+	@media (max-width: 300px) {
+		h1 { font-size: 100%; }
+		h2 { font-size: 40%; }
+	}
+
+	@media (min-width: 500px) {
+		h1 { font-size: 120%; }
+		h2 { font-size: 80%; }
+	}
+
+	@media (min-width: 700px) {
+		h1 { font-size: 180%; }
+		h2 { font-size: 120%; }
+	}
+
+	@media (min-width: 1200px) {
+		h1 { font-size: 350%; }
+		h2 { font-size: 200%; }
+	}
+	
+	.ui.header{							
+		font-family:Archistico_Bold; 
+		color:#E0E0E0;
+		font-size:2em;
+	}
+	.ui.form textarea, .ui.form input[type="text"], .ui.form textarea:focus, .ui.form input[type="text"]:focus, .ui.form.segment{ 
+	  background-color:transparent;
+	  border-color:white;
+	  border-style:solid;
+	  color:white;
+	  font-family:courier;
+	  font-size: .9em;
+	}	
+	
+	.ui.form.segment{
+		border-width:1px; 
+		border-radius:0;
+	}
+	.ui.modal{
+		background-image:url("blueprint.jpg");
+		border:none;
+		border-radius:0;
+	}
+	
+	.ui.modal .content{
+		background-color:transparent;
+	}
+
+	
+	.ui.form ::-webkit-input-placeholder {
+	  color: #CCCCCC;
+	}
+
+	.ui.form ::-moz-placeholder {
+	  color: #CCCCCC;
+	}
+
+	.ui.form :focus::-webkit-input-placeholder {
+	  color: #CCCCCC;
+	}
+
+	.ui.form :focus::-moz-placeholder {
+	  color: #CCCCCC;
+	}
+	
+	.ui.button, .ui.button:not(.loading):active, .ui.active.button:not(.loading):active {
+		background-color:transparent;
+		color:#CCCCCC;
+		border-style:solid; 
+		border-color:white; 
+		border-width:1px; 
+		border-radius:0;
+	}
+	.ui.pointing.left.label, .ui.pointing.label:before {
+		background-color:#CCCCCC;
+		
+	}
+	
+	.ui.button:not(.loading):hover{
+		color:#FAFAFA;
+	}
+	
+	.ui.dimmer {
+		background-color: rgba(0, 0, 0, 0.7); 
+	}
+	
+	.ui.modal .header {
+	  margin: 0em;
+	  padding: 1.5rem 0rem 0rem 2em;
+	  font-size: 1.6em;
+	  border-radius: 0.325em 0.325em 0px 0px;
+	}
+	
