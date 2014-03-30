@@ -1,7 +1,8 @@
 var app = angular.module("construction", []);
 var GLOBAL = {
 	browsers : ['webkit', 'ms', 'moz', 'o'],
-	inAction : false
+	inAction : false,
+	timeOut : 0
 };
 app.directive("listanimation", function() {
 	return function(scope, element, attrs) {
@@ -41,33 +42,37 @@ app.directive("elementanimation", function() {
 			element.css(attr, element.attr('duration'));
 		}
 		element.bind("mouseenter", function() {
-			if(element.hasClass('animated '+attrs.click)) return false;
-			element.removeClass('animated '+attrs.leave).addClass(attrs.enter+' animated');
+			if(element.hasClass('animated '+attrs.click) || attrs.enter == '') return false;
+			element.removeClass('animated').removeClass(attrs.leave).addClass(attrs.enter+' animated');
 			element.unbind(event);
 			element.one(event, function() {
 					element.removeClass('animated').removeClass(attrs.enter);
 				});
 		});
 		element.bind("mouseleave", function() {	
-			if(element.hasClass('animated '+attrs.click)) return false;
-			element.removeClass(attrs.enter+' animated').addClass('animated '+attrs.leave);
+			if(element.hasClass('animated') || attrs.leave == '') return false;
+			element.removeClass(attrs.enter).removeClass('animated').addClass('animated '+attrs.leave);
 			element.unbind(event);
 			element.one(event, function() {
 					element.removeClass('animated').removeClass(attrs.leave);
 				});
 		});
 		element.bind("click", function() {
-			element.removeClass(attrs.enter+' animated').addClass('animated '+attrs.click);
+			if(attrs.click == '') return;
+			element.removeClass(attrs.enter).removeClass('animated').addClass('animated '+attrs.click);
 			element.unbind(event);
 			element.one(event, function() {
 				element.removeClass('animated').removeClass(attrs.click);
+				if(attrs.clickfn) {
+					$('body').append('<script>'+attrs.clickfn+'</script>');
+				}
 			});
 		});
 	};
 });
 
 function submit() {
-	if(GLOBAL.inAction || $('.ui.form').form('validate form') == false) return false;
+	if(GLOBAL.inAction || getWarningMsg()) return false;
 	GLOBAL.inAction = true;
 	var jsonData = {};
 	$('input[type=text], textarea').each(
@@ -89,11 +94,38 @@ function submit() {
 	
 };
 
+function getWarningMsg() {
+	var str = '';
+	$('.required').each(function(){ 
+		if($(this).val() == '') {
+			str += $(this).attr('name') + ', ';
+		} 
+	});
+	str = str.substr(0, str.lastIndexOf(', '));
+	var index = str.lastIndexOf(', ');
+	if(index > 0) {
+		var offset = (str.indexOf(', ') == index) ? 0 : 2;
+		str = str.substr(0, index+offset) + 'and '+ str.substr(index+2);
+	}
+	if(str) {
+		$('#msg').text(str);
+		$("#promptMessage").css('display', 'inline');
+		return true;
+	}
+	$("#promptMessage").css('display', 'none'); 
+	return false;
+};
+
 function response(msg) {	
 	$('.modal.response').html(msg);
 	$('.modal.response').modal('show');
+	$('.modal.comment').modal('hide');
 	GLOBAL.inAction = false;
 };
 function cancel() {
 	$('.modal').modal('hide');
+};
+
+function checkBrowserSize() {
+	$('body').css('height', window.innerHeight);
 };

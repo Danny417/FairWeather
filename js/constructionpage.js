@@ -1,25 +1,5 @@
 var messageArray = new Array("false", "false", "false");  //this array will be used when updating the comment prompt message
 var formsArray = new Array("name", "subject", "message"); 
-var swiper = new Swiper('.swiper-container', {
-	slidesPerView:3,
-	loop: true,
-	//3D Flow:
-	tdFlow: {
-		rotate : 50,
-		stretch :0,
-		depth: 100,
-		modifier : 1,
-		shadows : true
-	}
-});
-function checkBrowserSize() {
-	$(".swiper-slide, .swiper-wrapper").css('height', window.innerHeight*0.5);
-	$("#page").css('height', window.innerHeight - 50);
-	$("#menu").css('height', '20%');
-	$("#title").css('height', '10%');
-	$('#menu img').css('margin-top', $("#menu").height()/4-32);
-};
-
 /*--added this function to validate the comment form - checks whether a field is blank and updates accordingly*/
 function updateMessage(form){
 	var string = " ";
