@@ -11,7 +11,7 @@
 	<h1 id="construction"> Under Construction  </h1>			
 	<img elementanimation enter="" leave="flash" click="swing" src="img/buttons/facebook-print.png" class="draggable"/>
 	<img elementanimation enter="" leave="flash" click="swing" src="img/buttons/twitter-print.png" class="draggable"/>
-	<img elementanimation enter="" leave="flash" click="swing" clickfn="$('.modal').show('show')" src="img/buttons/gmail.png" class="draggable"/>
+	<img elementanimation enter="" leave="flash" click="swing" clickfn="$('.modal.comment').show('show')" src="img/buttons/comment.png" class="draggable"/>
 	
 	<div class="ui modal comment">
 		<div class="ui header"> <!-- DH : font is not on the git? style="font-family:Archistico_Bold; font-size:2em;">	<!--unless i add style rules here, get times new roman!-->
@@ -91,6 +91,9 @@
 			});
             
 		});
+	</script>
+	<script id="oncall">
+		
 	</script>
 </body>
 </html>

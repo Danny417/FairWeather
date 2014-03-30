@@ -64,7 +64,7 @@ app.directive("elementanimation", function() {
 			element.one(event, function() {
 				element.removeClass('animated').removeClass(attrs.click);
 				if(attrs.clickfn) {
-					$('body').append('<script>'+attrs.clickfn+'</script>');
+					$('body').append('<script>'+attrs.clickfn+'</script>'); //DH : may need to look for better solution
 				}
 			});
 		});
@@ -118,12 +118,12 @@ function getWarningMsg() {
 
 function response(msg) {	
 	$('.modal.response').html(msg);
-	$('.modal.response').modal('show');
-	$('.modal.comment').modal('hide');
+	$('.modal.response').show('show');
+	$('.modal.comment').hide();
 	GLOBAL.inAction = false;
 };
 function cancel() {
-	$('.modal').modal('hide');
+	$('.modal').hide();
 };
 
 function checkBrowserSize() {

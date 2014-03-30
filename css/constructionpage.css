@@ -2,10 +2,11 @@
  *construction page and comment form CSS
  *
  */
+/* DH : font does not exisit
 @font-face {
 	font-family: Archistico_Bold;
 	src: url('../fonts/Archistico_Bold.ttf');
-}
+} */
 h1 {
 	font-size: 80px;
 	text-align:center;
