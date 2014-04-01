@@ -62,7 +62,6 @@
 
 </head>
 <body>
-    <div class="contain">
 		<h1 id="construction"> Under Construction  </h1>			
 		<img elementanimation enter="" leave="flash" click="swing" src="img/buttons/facebook-print.png" class="draggable"/>
 		<img elementanimation enter="" leave="flash" click="swing" src="img/buttons/twitter-print.png" class="draggable"/>
@@ -102,7 +101,6 @@
 				<div class="ui positive button" onclick="submit()">Submit</div>
 			</div>		
 		</div>
-	</div>
 	<div class="ui basic modal response">
 	</div>
     <footer id="footer">
@@ -125,17 +123,19 @@
 			});
             
 			checkBrowserSize();
-            
+            var timeout_id = 0,
+                hold_time = 1000;
 			$(".draggable").draggable({
                 containment: "body", scroll:false
             }).mousedown(function(){
-                $(this).dimBackground(); 
-            }).mouseleave(function(){
-                $(".draggable").undim();
-            }).mouseup(function(){
-                $(this).undim(); 
-            });
-            
+                timeout_id = setTimeout(dim,hold_time);
+            }).bind('mouseup mouseout mouseleave', function() {
+                clearTimeout(timeout_id);
+                $(this).undim();
+            });   
+            function dim(){
+                $('.draggable').dimBackground();
+            }
 		});
 	</script>
 </body>
