@@ -120,22 +120,25 @@
 		$(document).ready(function() {
 			$(".draggable").each(function() {
 				$(this).css('left', Math.random()*window.innerWidth*0.75).css('top', Math.random()*window.innerHeight*0.75);
-			});
-            
+			});            
 			checkBrowserSize();
             var timeout_id = 0,
                 hold_time = 1000;
+            function dim(){
+                $('.draggable').dimBackground();
+                }
 			$(".draggable").draggable({
-                containment: "body", scroll:false
+                containment: "body", 
+                scroll:false, 
+                stop: function(){
+                $(this).undim();
+                }
             }).mousedown(function(){
                 timeout_id = setTimeout(dim,hold_time);
-            }).bind('mouseup mouseout mouseleave', function() {
+            }).mouseup(function() {
                 clearTimeout(timeout_id);
                 $(this).undim();
             });   
-            function dim(){
-                $('.draggable').dimBackground();
-            }
 		});
 	</script>
 </body>
